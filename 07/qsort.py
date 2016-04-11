@@ -25,3 +25,12 @@ lnums = [random.randint(1,100) for x in range(1,20)]
 print lnums
 print qsort(lnums)
 
+###############################################################################
+
+def qsort2(l):
+    if (l==[]):
+        return []
+    pivot = l[0]
+    lh = [x for x in l if x<pivot]
+    uh = [x for x in l if x>pivot]
+    return qsort(lh) + ([pivot] * l.count(pivot)) + qsort(uh)
